@@ -16,8 +16,11 @@ abstract class BaseBloc {
   BaseBloc() {
     _eventController.stream.listen((event) {
       onUiDataChange(event);
+      postUiEvent(event);
     });
   }
+
+  void postUiEvent(BaseBlocEvent event) {}
 
   ///You can listen to [streams] from the [BaseWidget]subClass within a [StreamBuilder]
   List<Stream> _secondaryStreams = <Stream>[];
