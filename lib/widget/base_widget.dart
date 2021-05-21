@@ -1,5 +1,6 @@
 import 'package:base_bloc/bloc/base_bloc.dart';
 import 'package:base_bloc/bloc/primary_state.dart';
+import 'package:base_bloc/utils/translations.dart';
 import 'package:flutter/material.dart';
 
 abstract class BaseWidget extends StatefulWidget {
@@ -18,6 +19,10 @@ abstract class BaseState<PageType extends BaseWidget, BlocType extends BaseBloc>
     bloc = widget.getBloc() as BlocType;
     bloc.baseState.listen(onBlocStateChanged);
     super.initState();
+  }
+
+  String translate(String? text, {BuildContext? context}) {
+    return Translations.of(context ?? this.context)?.text(text) ?? "";
   }
 
   @mustCallSuper
