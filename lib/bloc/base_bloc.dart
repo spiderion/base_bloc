@@ -43,7 +43,7 @@ abstract class BaseBloc {
   ///Use this to listen events emitted by the [BaseBloc]
   Stream<T> getStreamOfType<T extends BaseBlocDataState>() =>
       _secondaryStreams.singleWhere((element) => element is Stream<T>,
-          orElse: () => throw FlutterError("Streams should be registered in the bloc")) as Stream<T>;
+          orElse: () => throw FlutterError("Streams of type ${T.toString()} should be registered in the bloc")) as Stream<T>;
 
   ///register streams that extend [BaseBlocDataState] to _secondaryStreams
   ///You can listen to them from the widget side within a [StreamBuilder]
