@@ -1,8 +1,7 @@
 name: base_bloc
 description: Base bloc package.
 version: 0.0.2
-author: Ion Olaru
-homepage: Base Bloc
+homepage: https://github.com/spiderion/base_bloc
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
