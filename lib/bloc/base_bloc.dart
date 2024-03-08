@@ -20,6 +20,9 @@ abstract class BaseBloc {
     });
   }
 
+  ///Called by the [BaseWidget] after the widget has been displayed
+  Future<void> afterWidgetBinding() async {}
+
   void postUiEvent(BaseBlocEvent event) {}
 
   ///You can listen to [streams] from the [BaseWidget]subClass within a [StreamBuilder]
